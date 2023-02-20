@@ -58,7 +58,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product2.png"
@@ -77,7 +77,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product3.png"
@@ -96,7 +96,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product4.png"
@@ -115,7 +115,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product5.png"
@@ -134,7 +134,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product6.png"
@@ -153,7 +153,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product1.png"
@@ -172,7 +172,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product2.png"
@@ -191,7 +191,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product3.png"
@@ -210,7 +210,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product4.png"
@@ -229,7 +229,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product5.png"
@@ -248,7 +248,7 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="product-card">
-                  <a href="/product?_id=624cd765a5d835001615a6d3">
+                  <a href="/products/product?_id=624cd765a5d835001615a6d3">
                     <Image
                       alt="no_image"
                       src="/image/product6.png"

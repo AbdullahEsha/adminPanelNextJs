@@ -78,75 +78,77 @@ const Refferals = () => {
                   <h2>1k+</h2>
                 </div>
               </div>
-              <div className="refferal-top-panel">
-                <h3>Referral Users</h3>
-                <input type="text" placeholder="🔎︎ Search here..." />
-                <div className="filter">
-                  <p>Filter</p>
-                  <select>
-                    <option>Date</option>
-                  </select>
-                  <select>
-                    <option>Name</option>
-                  </select>
-                </div>
-              </div>
-              <div className="table">
-                <div className="table-head">
-                  <p className="refferal-user">User</p>
-                  <p className="refferal-id">Referral ID</p>
-                  <p className="refferal-joinDate">Joined Date</p>
-                  <p className="refferal-paymentType">Payment Type</p>
-                  <p className="refferal-amountPaid">Amount Paid</p>
-                  <p className="refferal-amountOwed">Amount Owed</p>
-                </div>
-                <div className="table-body">
-                  <div className="refferal-user table-image">
-                    <Image
-                      src="/image/supportImage.png"
-                      alt="user_image"
-                      height={45}
-                      width={45}
-                    />
-                    <p>Hamid Hasan</p>
+              <div className="card">
+                <div className="refferal-top-panel">
+                  <h3>Referral Users</h3>
+                  <input type="text" placeholder="🔎︎ Search here..." />
+                  <div className="filter">
+                    <p>Filter</p>
+                    <select>
+                      <option>Date</option>
+                    </select>
+                    <select>
+                      <option>Name</option>
+                    </select>
                   </div>
-                  <p className="refferal-id">8hg4xcvv</p>
-                  <p className="refferal-joinDate">1/4/2022</p>
-                  <p className="refferal-paymentType">Stripe</p>
-                  <p className="refferal-amountPaid">57$</p>
-                  <p className="refferal-amountOwed">57$</p>
                 </div>
-                <div className="table-body">
-                  <div className="refferal-user table-image">
-                    <Image
-                      src="/image/supportImage.png"
-                      alt="user_image"
-                      height={45}
-                      width={45}
-                    />
-                    <p>Hamid Hasan</p>
+                <div className="table">
+                  <div className="table-head">
+                    <p className="refferal-user">User</p>
+                    <p className="refferal-id">Referral ID</p>
+                    <p className="refferal-joinDate">Joined Date</p>
+                    <p className="refferal-paymentType">Payment Type</p>
+                    <p className="refferal-amountPaid">Amount Paid</p>
+                    <p className="refferal-amountOwed">Amount Owed</p>
                   </div>
-                  <p className="refferal-id">8hg4xcvv</p>
-                  <p className="refferal-joinDate">1/4/2022</p>
-                  <p className="refferal-paymentType">Stripe</p>
-                  <p className="refferal-amountPaid">57$</p>
-                  <p className="refferal-amountOwed">57$</p>
-                </div>
-                <div className="table-body">
-                  <div className="refferal-user table-image">
-                    <Image
-                      src="/image/supportImage.png"
-                      alt="user_image"
-                      height={45}
-                      width={45}
-                    />
-                    <p>Hamid Hasan</p>
+                  <div className="table-body">
+                    <div className="refferal-user table-image">
+                      <Image
+                        src="/image/supportImage.png"
+                        alt="user_image"
+                        height={45}
+                        width={45}
+                      />
+                      <p>Hamid Hasan</p>
+                    </div>
+                    <p className="refferal-id">8hg4xcvv</p>
+                    <p className="refferal-joinDate">1/4/2022</p>
+                    <p className="refferal-paymentType">Stripe</p>
+                    <p className="refferal-amountPaid">57$</p>
+                    <p className="refferal-amountOwed">57$</p>
                   </div>
-                  <p className="refferal-id">8hg4xcvv</p>
-                  <p className="refferal-joinDate">1/4/2022</p>
-                  <p className="refferal-paymentType">Stripe</p>
-                  <p className="refferal-amountPaid">57$</p>
-                  <p className="refferal-amountOwed">57$</p>
+                  <div className="table-body">
+                    <div className="refferal-user table-image">
+                      <Image
+                        src="/image/supportImage.png"
+                        alt="user_image"
+                        height={45}
+                        width={45}
+                      />
+                      <p>Hamid Hasan</p>
+                    </div>
+                    <p className="refferal-id">8hg4xcvv</p>
+                    <p className="refferal-joinDate">1/4/2022</p>
+                    <p className="refferal-paymentType">Stripe</p>
+                    <p className="refferal-amountPaid">57$</p>
+                    <p className="refferal-amountOwed">57$</p>
+                  </div>
+                  <div className="table-body">
+                    <div className="refferal-user table-image">
+                      <Image
+                        src="/image/supportImage.png"
+                        alt="user_image"
+                        height={45}
+                        width={45}
+                      />
+                      <p>Hamid Hasan</p>
+                    </div>
+                    <p className="refferal-id">8hg4xcvv</p>
+                    <p className="refferal-joinDate">1/4/2022</p>
+                    <p className="refferal-paymentType">Stripe</p>
+                    <p className="refferal-amountPaid">57$</p>
+                    <p className="refferal-amountOwed">57$</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -60,7 +60,7 @@ const Sidebar = () => {
         <li
           className={`${router.pathname === "/block-chain" && "active-menu"}`}
         >
-          <Link href="/block-chain">
+          <Link href="#">
             <BsBoundingBox size={20} /> BlockChain
           </Link>
         </li>

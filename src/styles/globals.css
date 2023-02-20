@@ -420,7 +420,7 @@ p.owed-col label {
 .user-reference {
   width: 20%;
 }
-.user-edit {
+.user-view {
   width: 10%;
 }
 .filter select:focus {
@@ -564,7 +564,6 @@ p.order-status span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
 }
 .refferal-top-panel input {
   background-color: #f1f8ff;
@@ -589,6 +588,7 @@ p.order-status span {
   display: flex;
   border-radius: 15px;
   justify-content: space-between;
+  margin-bottom: 25px;
 }
 .refferal-card {
   padding: 15px;
@@ -683,7 +683,6 @@ p.order-status span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
 }
 .subscriber-top-panel input {
   background-color: #f1f8ff;
@@ -706,14 +705,13 @@ p.order-status span {
 .subscriber-email {
   width: 35%;
 }
-.subscriber-edit {
+.subscriber-view {
   width: 15%;
 }
 .enterprise-leads-top-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
 }
 .enterprise-leads-top-panel input {
   background-color: #f1f8ff;
