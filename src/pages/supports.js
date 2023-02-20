@@ -1,6 +1,9 @@
+import LiveSupport from "@/components/LiveSupport";
 import Sidebar from "@/components/Sidebar";
 import Head from "next/head";
 import Image from "next/image";
+import { MdOutlineGraphicEq, MdOutlineEmail } from "react-icons/md";
+import { VscTools } from "react-icons/vsc";
 
 const Supports = () => {
   return (
@@ -35,7 +38,34 @@ const Supports = () => {
                 </div>
               </div>
             </div>
-            <div className="container"></div>
+            <div className="container">
+              <div className="support-top-btn">
+                <div className="support-live-support">
+                  <MdOutlineGraphicEq size={20} />
+                  <p>Live Support</p>
+                </div>
+                <div className="support-email-support">
+                  <MdOutlineEmail size={20} />
+                  <p>Email Support</p>
+                </div>
+                <div className="support-problem-solve">
+                  <VscTools size={20} />
+                  <p>Problem Solve</p>
+                </div>
+              </div>
+              <div className="support-top-btn">
+                <div className="support-border-out">
+                  <div />
+                </div>
+                <div className="support-border-out">
+                  <div />
+                </div>
+                <div className="support-border-out">
+                  <div />
+                </div>
+              </div>
+              <LiveSupport />
+            </div>
           </div>
         </div>
       </main>
