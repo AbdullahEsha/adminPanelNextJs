@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -747,7 +747,7 @@ p.order-status span {
   width: 20%;
 }
 .user-top-banner {
-  background: url("/image/user-page-banner.png") no-repeat center center;
+  background: url('/image/user-page-banner.png') no-repeat center center;
   background-size: auto;
   height: 100%;
   width: 100%;
@@ -1133,9 +1133,9 @@ p.order-status span {
   font-size: 18px;
   font-weight: 500;
 }
-.promocode-inside input[type="text"],
-.promocode-inside input[type="date"],
-.promocode-inside input[type="file"] {
+.promocode-inside input[type='text'],
+.promocode-inside input[type='date'],
+.promocode-inside input[type='file'] {
   padding: 8px 20px;
   width: 100%;
   background-color: #f2f2f2;
@@ -1150,12 +1150,12 @@ p.order-status span {
   border: 0.5px solid #ebebeb;
 }
 .promocode-inside textarea:focus,
-.promocode-inside input[type="date"]:focus,
-.promocode-inside input[type="text"]:focus {
+.promocode-inside input[type='date']:focus,
+.promocode-inside input[type='text']:focus {
   outline: none;
 }
 
-input[type="radio"]:after {
+input[type='radio']:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -1163,27 +1163,27 @@ input[type="radio"]:after {
   left: -1px;
   position: relative;
   background-color: #ffffff;
-  content: "";
+  content: '';
   display: inline-block;
   visibility: visible;
   border: 1px solid rgb(184, 184, 184);
 }
-input[type="radio"]:checked:after {
+input[type='radio']:checked:after {
   background: #00e2b3;
   box-shadow: 0px 0px 0.2rem #00e2b5c7;
   border: 2px solid rgb(255, 255, 255);
 }
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   background: #00e2b3;
   border-color: #00e2b3;
 }
-input[type="checkbox"]:focus {
+input[type='checkbox']:focus {
   border-color: #00e2b3;
 }
-input[type="radio"]:focus {
+input[type='radio']:focus {
   border-color: #00e2b3;
 }
-input[type="radio"]:checked {
+input[type='radio']:checked {
   border-color: #00e2b3;
 }
 
@@ -1320,23 +1320,33 @@ input[type="radio"]:checked {
   border-radius: 15px;
   box-shadow: 7px 7px 10px #b0b0b026;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-height: 71vh;
 }
 .chatbox-middle {
   padding: 0px 20px;
 }
 .chatbox-bottom {
   padding: 0px 20px;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
 }
 .chatbox-bottom div {
   border-radius: 50px;
   width: 100%;
   border: 0.5px solid #b8b8b8;
+  background-color: #fff;
 }
 .chatbox-bottom div p {
   margin: 0px;
 }
 .chatbox-middle {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 .chatbox-chat-left {
   background-color: #4b93ff;
@@ -1346,7 +1356,7 @@ input[type="radio"]:checked {
   width: fit-content;
   font-size: 13px;
   font-weight: 400;
-  margin: 0px;
+  margin: 2px 0px;
 }
 .chatbox-chat-right {
   background-color: #edf4ff;
@@ -1356,7 +1366,8 @@ input[type="radio"]:checked {
   text-align: right;
   font-size: 13px;
   font-weight: 400;
-  margin: 0px;
+  margin: 2px 0px;
+  align-self: flex-end;
 }
 
 /* ======================= Sidebar start ==================== */
@@ -1427,7 +1438,7 @@ input[type="radio"]:checked {
 }
 .switch .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 20px;
   width: 20px;
   left: 0px;

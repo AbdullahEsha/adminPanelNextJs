@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { CiTimer } from "react-icons/ci";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import Image from 'next/image'
+import { CiTimer } from 'react-icons/ci'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 const LiveSupport = () => {
   return (
@@ -194,6 +194,75 @@ const LiveSupport = () => {
                 Massa felis nulla dolor amet. nulla dolor amet. nulla dolor
                 amet. nulla dolor amet.
               </p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">Massa felis nulla dolor amet.</p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet. nulla dolor amet. nulla dolor
+                amet. nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">Massa felis nulla dolor amet.</p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet. nulla dolor amet. nulla dolor
+                amet. nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">Massa felis nulla dolor amet.</p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet. nulla dolor amet. nulla dolor
+                amet. nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">Massa felis nulla dolor amet.</p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-right">
+                Massa felis nulla dolor amet. nulla dolor amet. nulla dolor
+                amet. nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">
+                Massa felis nulla dolor amet. Massa felis nulla dolor amet.
+                Massa felis nulla dolor amet.
+              </p>
+              <p className="chatbox-chat-left">Massa felis nulla dolor amet.</p>
             </div>
             <div className="chatbox-bottom">
               <div>
@@ -204,7 +273,7 @@ const LiveSupport = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LiveSupport;
+export default LiveSupport
