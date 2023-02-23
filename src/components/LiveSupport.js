@@ -1,6 +1,8 @@
-import Image from 'next/image'
-import { CiTimer } from 'react-icons/ci'
-import { BsThreeDotsVertical } from 'react-icons/bs'
+import Image from "next/image";
+import { CiTimer } from "react-icons/ci";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { AiOutlinePaperClip } from "react-icons/ai";
+import { IoIosPaperPlane } from "react-icons/io";
 
 const LiveSupport = () => {
   return (
@@ -266,14 +268,16 @@ const LiveSupport = () => {
             </div>
             <div className="chatbox-bottom">
               <div>
-                <p>test</p>
+                <AiOutlinePaperClip size={40} className="paperClip" />
+                <input type="text" placeholder="test" />
+                <IoIosPaperPlane size={40} className="paperPlane" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default LiveSupport
+export default LiveSupport;

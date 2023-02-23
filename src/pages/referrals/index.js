@@ -83,7 +83,7 @@ const Refferals = () => {
                   <h3>Referral Users</h3>
                   <input type="text" placeholder="🔎︎ Search here..." />
                   <div className="filter">
-                    <p>Filter</p>
+                    <p> Filter</p>
                     <select>
                       <option>Date</option>
                     </select>

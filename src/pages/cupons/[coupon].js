@@ -81,7 +81,7 @@ const Coupon = () => {
                     <label>Yes</label> 
                     <input type="radio" name="shiping-type" /> {" "}
                     <label>No</label>
-                    <p>Description:</p>
+                    <p>Image:</p>
                     <input type="file" />
                   </div>
                   <button>Save</button>

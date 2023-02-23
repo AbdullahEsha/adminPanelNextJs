@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import useWindowDimensions from "./useWindowDimensions";
 import { FaChartPie } from "react-icons/fa";
 import { FiBarChart2 } from "react-icons/fi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -10,74 +11,99 @@ import { MdOutlineLeaderboard } from "react-icons/md";
 import { IoPeopleOutline, IoTicketOutline } from "react-icons/io5";
 import { VscSignOut, VscReferences } from "react-icons/vsc";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 const Sidebar = () => {
-  // const [active, setActive] = useState(true);
   const router = useRouter();
+  const { width } = useWindowDimensions();
 
   return (
     <div className="sidebar">
       <ul className="sideber-menu">
         <li>
           <Link href="/">
-            <Image
-              src="/image/swoplogo.png"
-              alt="swop-logo"
-              className="sidebar-logo"
-              height={30}
-              width={132}
-            />
+            {width < 992 ? (
+              <Image
+                src="/favicon.ico"
+                alt="swop-logo"
+                className="sidebar-logo"
+                height={32}
+                width={32}
+              />
+            ) : (
+              <Image
+                src="/image/swoplogo.png"
+                alt="swop-logo"
+                className="sidebar-logo"
+                height={30}
+                width={132}
+              />
+            )}
           </Link>
         </li>
         <li className={`${router.pathname === "/" && "active-menu"}`}>
           <Link href="/">
-            <FaChartPie size={20} /> Dashboard
+            <FaChartPie size={20} />
+            <label> Dashboard</label>
           </Link>
         </li>
         <li className={`${router.pathname === "/users" && "active-menu"}`}>
           <Link href="/users">
-            <FiBarChart2 size={20} /> Users
+            <FiBarChart2 size={20} />
+            <label> Users</label>
           </Link>
         </li>
         <li className={`${router.pathname === "/orders" && "active-menu"}`}>
           <Link href="/orders">
             <AiOutlineShoppingCart size={20} />
-            Orders
+            <label> Orders</label>
           </Link>
         </li>
-        <li className={`${router.pathname === "/products" && "active-menu"}`}>
+        <li
+          className={`${
+            (router.pathname === "/products" ||
+              router.pathname === "/products/[product]") &&
+            "active-menu"
+          }`}
+        >
           <Link href="/products">
             <HiOutlineShoppingBag size={20} />
-            Products
+            <label> Products</label>
           </Link>
         </li>
-        <li className={`${router.pathname === "/cupons" && "active-menu"}`}>
+        <li
+          className={`${
+            (router.pathname === "/cupons" ||
+              router.pathname === "/cupons/[coupon]") &&
+            "active-menu"
+          }`}
+        >
           <Link href="/cupons">
-            <IoTicketOutline size={20} /> Cupons
+            <IoTicketOutline size={20} /> <label>Cupons</label>
           </Link>
         </li>
         <li
           className={`${router.pathname === "/block-chain" && "active-menu"}`}
         >
           <Link href="#">
-            <BsBoundingBox size={20} /> BlockChain
+            <BsBoundingBox size={20} />
+            <label> BlockChain</label>
           </Link>
         </li>
         <li className={`${router.pathname === "/referrals" && "active-menu"}`}>
           <Link href="/referrals">
-            <VscReferences size={20} /> Referrals
+            <VscReferences size={20} /> <label>Referrals</label>
           </Link>
         </li>
         <li className={`${router.pathname === "/supports" && "active-menu"}`}>
           <Link href="/supports">
-            <BiSupport size={20} /> Supports
+            <BiSupport size={20} />
+            <label> Supports</label>
           </Link>
         </li>
         <li className={`${router.pathname === "/financials" && "active-menu"}`}>
           <Link href="/financials">
             <BsCoin size={20} />
-            Financials
+            <label> Financials</label>
           </Link>
         </li>
         <li
@@ -87,7 +113,7 @@ const Sidebar = () => {
         >
           <Link href="/enterprise-leads">
             <MdOutlineLeaderboard size={20} />
-            Enterprises Leads
+            <label> Enterprises Leads</label>
           </Link>
         </li>
         <li
@@ -95,13 +121,13 @@ const Sidebar = () => {
         >
           <Link href="/subscribers">
             <IoPeopleOutline size={20} />
-            Subscribers
+            <label> Subscribers</label>
           </Link>
         </li>
         <li>
           <Link href="/signout">
             <VscSignOut size={20} />
-            Sign Out
+            <label> Sign Out</label>
           </Link>
         </li>
       </ul>

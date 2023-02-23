@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import Sidebar from "@/components/Sidebar";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import { HiOutlineEye } from "react-icons/hi";
 
 const Order = () => {
   const router = useRouter();
@@ -137,6 +139,7 @@ const Order = () => {
                     <p className="order-price">Price</p>
                     <p className="order-date">Delivery Date</p>
                     <p className="order-status">Delivery Status</p>
+                    <p className="order-view">View</p>
                   </div>
                   <div className="table-body">
                     <p className="order-no">1009701</p>
@@ -156,6 +159,11 @@ const Order = () => {
                       <span style={{ backgroundColor: "#ffa800" }}>
                         Processing
                       </span>
+                    </p>
+                    <p className="order-view">
+                      <Link href="/orders/order?_id=1dsd21hg21871178631">
+                        <HiOutlineEye size={20} color={"#5197ca"} />
+                      </Link>
                     </p>
                   </div>
                   <div className="table-body">
@@ -177,6 +185,11 @@ const Order = () => {
                         Complete
                       </span>
                     </p>
+                    <p className="order-view">
+                      <Link href="/orders/order?_id=1dsd21hg21871178631">
+                        <HiOutlineEye size={20} color={"#5197ca"} />
+                      </Link>
+                    </p>
                   </div>
                   <div className="table-body">
                     <p className="order-no">1009701</p>
@@ -194,6 +207,11 @@ const Order = () => {
                     <p className="order-date">7/11/2022</p>
                     <p className="order-status">
                       <span style={{ backgroundColor: "#ff4f4f" }}>Cancel</span>
+                    </p>
+                    <p className="order-view">
+                      <Link href="/orders/order?_id=1dsd21hg21871178631">
+                        <HiOutlineEye size={20} color={"#5197ca"} />
+                      </Link>
                     </p>
                   </div>
                 </div>

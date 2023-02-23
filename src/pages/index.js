@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { CiTimer } from "react-icons/ci";
+import useWindowDimensions from "../components/useWindowDimensions";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
 export default function Home() {
+  const { width } = useWindowDimensions();
   const [option, setOption] = useState({
     options: {
       chart: {
@@ -211,7 +213,15 @@ export default function Home() {
                     options={option.options}
                     series={option.series}
                     type="line"
-                    width={450}
+                    width={
+                      width < 992
+                        ? width < 768
+                          ? width < 550
+                            ? 300
+                            : 500
+                          : 700
+                        : 450
+                    }
                     height={260}
                   />
                 </div>
@@ -221,7 +231,15 @@ export default function Home() {
                     options={option.options}
                     series={option.series}
                     type="area"
-                    width={360}
+                    width={
+                      width < 992
+                        ? width < 768
+                          ? width < 550
+                            ? 300
+                            : 500
+                          : 700
+                        : 360
+                    }
                     height={260}
                   />
                 </div>
@@ -232,7 +250,15 @@ export default function Home() {
                     options={option.options}
                     series={option.series}
                     type="bar"
-                    width={360}
+                    width={
+                      width < 992
+                        ? width < 768
+                          ? width < 550
+                            ? 300
+                            : 500
+                          : 700
+                        : 360
+                    }
                     height={260}
                   />
                 </div>
