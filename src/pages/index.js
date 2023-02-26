@@ -214,12 +214,16 @@ export default function Home() {
                     series={option.series}
                     type="line"
                     width={
-                      width < 992
-                        ? width < 768
-                          ? width < 550
-                            ? 300
-                            : 500
-                          : 700
+                      width < 1549
+                        ? width < 1249
+                          ? width < 992
+                            ? width < 768
+                              ? width < 550
+                                ? 300
+                                : 500
+                              : 700
+                            : 750
+                          : 575
                         : 450
                     }
                     height={260}
@@ -232,31 +236,16 @@ export default function Home() {
                     series={option.series}
                     type="area"
                     width={
-                      width < 992
-                        ? width < 768
-                          ? width < 550
-                            ? 300
-                            : 500
-                          : 700
-                        : 360
-                    }
-                    height={260}
-                  />
-                </div>
-
-                <div className="bar-chart">
-                  <h3>Sales Goals</h3>
-                  <ReactApexChart
-                    options={option.options}
-                    series={option.series}
-                    type="bar"
-                    width={
-                      width < 992
-                        ? width < 768
-                          ? width < 550
-                            ? 300
-                            : 500
-                          : 700
+                      width < 1549
+                        ? width < 1249
+                          ? width < 992
+                            ? width < 768
+                              ? width < 550
+                                ? 300
+                                : 500
+                              : 700
+                            : 750
+                          : 360
                         : 360
                     }
                     height={260}
@@ -363,6 +352,29 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                <div className="bar-chart">
+                  <h3>Sales Goals</h3>
+                  <ReactApexChart
+                    options={option.options}
+                    series={option.series}
+                    type="bar"
+                    width={
+                      width < 1549
+                        ? width < 1249
+                          ? width < 992
+                            ? width < 768
+                              ? width < 550
+                                ? 300
+                                : 500
+                              : 700
+                            : 367
+                          : 525
+                        : 400
+                    }
+                    height={260}
+                  />
+                </div>
+
                 <div className="customer-support-board">
                   <h3>Customer Support</h3>
                   <div className="customer-support-board-inside">

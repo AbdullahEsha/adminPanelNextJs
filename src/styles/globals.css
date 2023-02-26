@@ -162,6 +162,9 @@ p.equal {
   font-weight: 500;
   color: #000;
 }
+.customer-support-content {
+  width: -webkit-fill-available;
+}
 .home-overview-bottom-panel {
   display: flex;
   justify-content: space-between;
@@ -274,7 +277,7 @@ p.equal {
 }
 .sales-leader-board .sales-leader-board-inside {
   height: auto;
-  width: 500px;
+  width: 360px;
 }
 .sales-data-head {
   display: flex;
@@ -320,7 +323,7 @@ p.owed-col label {
 }
 .customer-support-board-inside {
   height: 100%;
-  width: 335px;
+  width: 385px;
 }
 .customer-support-board-body {
   display: flex;
@@ -1527,9 +1530,6 @@ input[type="radio"]:checked {
   .overview-card p {
     font-size: 10px;
   }
-  .dashboard-charts {
-    justify-content: center;
-  }
   .justify-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1578,6 +1578,12 @@ input[type="radio"]:checked {
   }
   .support-container-name-detail p {
     font-size: 12px;
+  }
+  .sales-leader-board .sales-leader-board-inside {
+    width: 410px;
+  }
+  .customer-support-board-inside {
+    width: 467px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1249px) {
@@ -1640,16 +1646,17 @@ input[type="radio"]:checked {
     padding-right: 0px;
   }
   .overview-card {
-    padding: 5px;
+    padding: 15px;
   }
   .overview-card p {
     font-size: 15px;
   }
-  .dashboard-charts {
-    justify-content: center;
-  }
   .justify-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 50px 0px 25px;
+  }
+  .add-product {
+    margin-bottom: 25px;
   }
   .promocode-background img {
     height: 150px;
@@ -1721,6 +1728,10 @@ input[type="radio"]:checked {
   }
   .table-image {
     gap: 5px;
+  }
+  .sales-leader-board .sales-leader-board-inside,
+  .customer-support-board-inside {
+    width: 367px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1805,6 +1816,10 @@ input[type="radio"]:checked {
   }
   .justify-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 25px 0px;
+  }
+  .add-product {
+    margin-bottom: 25px;
   }
   .promocode-background img {
     height: 150px;
@@ -1994,6 +2009,10 @@ input[type="radio"]:checked {
   }
   .justify-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 25px 0px;
+  }
+  .add-product {
+    margin-bottom: 25px;
   }
   .promocode-background img {
     height: 150px;
@@ -2158,16 +2177,24 @@ input[type="radio"]:checked {
     border-radius: 10px;
   }
   p.revenue {
-    padding: 5px 12px;
+    padding: 5px 35px;
   }
   p.expenses {
-    padding: 5px 12px;
+    padding: 5px 16px;
   }
   p.profit {
-    padding: 5px 12px;
+    padding: 5px 16px;
+  }
+  .customer-support-board-body div p {
+    font-size: 11px;
   }
   p.top {
-    padding: 5px 12px;
+    padding: 5px 30px;
+  }
+  p.plus,
+  p.equal {
+    font-weight: 500;
+    font-size: 25px !important;
   }
   .home-overview-panel p {
     font-size: 13px;
@@ -2201,6 +2228,10 @@ input[type="radio"]:checked {
   }
   .justify-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 25px 0px;
+  }
+  .add-product {
+    margin-bottom: 25px;
   }
   .promocode-background img {
     height: 150px;
@@ -2319,8 +2350,63 @@ input[type="radio"]:checked {
     gap: 5px;
   }
   .filter button {
-    width: 90px;
+    height: 25px;
+    width: 80px;
     gap: 5px;
+    font-size: 11px;
+  }
+  .user-top-banner button {
+    gap: 5px;
+    padding: 5px 10px;
+    margin: 10px 12px 0px;
+    font-size: 12px;
+  }
+  .user-bottom {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  .user-txid-btn {
+    left: 200px;
+    top: -35px;
+  }
+  .order-top-content {
+    padding: 20px;
+  }
+  .order-btn-container {
+    padding: 0px;
+  }
+  .order-btn-container button {
+    padding: 5px 37px;
+  }
+  .order-top-content .order-top-content-left,
+  .order-top-content .order-top-content-right {
+    width: 100%;
+    padding: 0px;
+  }
+  .promocode-inside {
+    width: 100%;
+    padding: 0px;
+  }
+  .user-bottom .user-bottom-left,
+  .user-bottom .user-bottom-right {
+    width: 100%;
+    padding: 0px;
+  }
+  .support-top-btn div svg {
+    height: 14px;
+  }
+  .enterprise-leads-top-panel input {
+    display: none;
+  }
+  .table {
+    margin-top: 25px;
+  }
+  .subscriber-top-panel input {
+    display: none;
+  }
+  .promocode-bottom button {
+    margin-top: 25px;
   }
   .support-top-btn {
     gap: 5px;
