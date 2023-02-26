@@ -23,7 +23,7 @@ const Sidebar = () => {
           <Link href="/">
             {width < 992 ? (
               <Image
-                src="/favicon.ico"
+                src="/image/iconSwop.png"
                 alt="swop-logo"
                 className="sidebar-logo"
                 height={32}
