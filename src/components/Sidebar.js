@@ -4,7 +4,7 @@ import useWindowDimensions from "./useWindowDimensions";
 import { FaChartPie } from "react-icons/fa";
 import { FiBarChart2 } from "react-icons/fi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { HiOutlineShoppingBag, HiOutlineTicket } from "react-icons/hi";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BiSupport } from "react-icons/bi";
 import { BsCoin, BsBoundingBox } from "react-icons/bs";
 import { MdOutlineLeaderboard } from "react-icons/md";
@@ -46,13 +46,25 @@ const Sidebar = () => {
             <label> Dashboard</label>
           </Link>
         </li>
-        <li className={`${router.pathname === "/users" && "active-menu"}`}>
+        <li
+          className={`${
+            (router.pathname === "/users" ||
+              router.pathname === "/users/[user]") &&
+            "active-menu"
+          }`}
+        >
           <Link href="/users">
             <FiBarChart2 size={20} />
             <label> Users</label>
           </Link>
         </li>
-        <li className={`${router.pathname === "/orders" && "active-menu"}`}>
+        <li
+          className={`${
+            (router.pathname === "/orders" ||
+              router.pathname == "/orders/[order]") &&
+            "active-menu"
+          }`}
+        >
           <Link href="/orders">
             <AiOutlineShoppingCart size={20} />
             <label> Orders</label>
@@ -89,7 +101,13 @@ const Sidebar = () => {
             <label> BlockChain</label>
           </Link>
         </li>
-        <li className={`${router.pathname === "/referrals" && "active-menu"}`}>
+        <li
+          className={`${
+            (router.pathname === "/referrals" ||
+              router.pathname === "/referrals/[referral]") &&
+            "active-menu"
+          }`}
+        >
           <Link href="/referrals">
             <VscReferences size={20} /> <label>Referrals</label>
           </Link>
