@@ -1473,6 +1473,7 @@ input[type="radio"]:checked {
   font-size: 18px;
   font-weight: 400;
   padding: 10px 30px;
+  cursor: pointer;
 }
 .sideber-menu li a {
   text-decoration: none;
@@ -1480,6 +1481,7 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .active-menu {
   background-color: #000;
@@ -2469,4 +2471,51 @@ input[type="radio"]:checked {
     padding: 0px 20px;
     width: 120px;
   }
+}
+/* add products */
+.upload-btn {
+  cursor: pointer;
+  position: absolute;
+
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.526);
+}
+.btn-upload-left {
+  bottom: 2%;
+  left: 2%;
+}
+.btn-upload-right {
+  bottom: 2%;
+  right: 2%;
+}
+.image-select {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  row-gap: 20px;
+}
+.first {
+  grid-column: 1 / span 3;
+}
+.image-item {
+  position: relative;
+}
+
+/* Add Coupon */
+.disable {
+  opacity: 0.5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.btn-common {
+  background-image: linear-gradient(to right, #55b6ff, #797eff);
+  color: #fff;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: none;
 }

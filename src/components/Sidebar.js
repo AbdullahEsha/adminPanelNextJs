@@ -11,10 +11,22 @@ import { MdOutlineLeaderboard } from "react-icons/md";
 import { IoPeopleOutline, IoTicketOutline } from "react-icons/io5";
 import { VscSignOut, VscReferences } from "react-icons/vsc";
 import { useRouter } from "next/router";
+import SignOut from "@/firebase/auth/signout";
 
 const Sidebar = () => {
   const router = useRouter();
   const { width } = useWindowDimensions();
+
+  const handleSignOut = async () => {
+    try {
+      await SignOut();
+      router.push("/login");
+    } catch (error) {
+      router.push("/");
+
+      console.log(error.message);
+    }
+  };
 
   return (
     <div className="sidebar">
@@ -71,10 +83,13 @@ const Sidebar = () => {
           </Link>
         </li>
         <li
+          // className={`${
+          //   router.pathname === "/products" ||
+          //   router.pathname === "/products/[product]" ||
+          //   (router.pathname === "/products/addProducts" && "active-menu")
+          // }`}
           className={`${
-            (router.pathname === "/products" ||
-              router.pathname === "/products/[product]") &&
-            "active-menu"
+            router.pathname.startsWith("/products") && "active-menu"
           }`}
         >
           <Link href="/products">
@@ -83,14 +98,28 @@ const Sidebar = () => {
           </Link>
         </li>
         <li
+          // className={`${
+          //   (router.pathname === "/coupons" ||
+          //     router.pathname === "/coupons/[coupon]") &&
+          //   "active-menu"
+          // }`}
           className={`${
-            (router.pathname === "/cupons" ||
-              router.pathname === "/cupons/[coupon]") &&
+            router.pathname.startsWith("/coupons") && "active-menu"
+          }`}
+        >
+          <Link href="/coupons">
+            <IoTicketOutline size={20} /> <label>Coupons</label>
+          </Link>
+        </li>
+        <li
+          className={`${
+            (router.pathname === "/category" ||
+              router.pathname === "/category/[coupon]") &&
             "active-menu"
           }`}
         >
-          <Link href="/cupons">
-            <IoTicketOutline size={20} /> <label>Cupons</label>
+          <Link href="/category">
+            <IoTicketOutline size={20} /> <label>Catogory</label>
           </Link>
         </li>
         <li
@@ -143,7 +172,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/signout">
+          <Link href="/signout" onClick={handleSignOut}>
             <VscSignOut size={20} />
             <label> Sign Out</label>
           </Link>
