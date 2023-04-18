@@ -1136,7 +1136,8 @@ p.order-status span {
 }
 .promocode-inside input[type="text"],
 .promocode-inside input[type="date"],
-.promocode-inside input[type="file"] {
+.promocode-inside input[type="file"],
+.promocode-inside input[type="number"] {
   padding: 8px 20px;
   width: 100%;
   background-color: #f2f2f2;
@@ -1473,7 +1474,7 @@ input[type="radio"]:checked {
   font-size: 18px;
   font-weight: 400;
   padding: 10px 30px;
-  cursor: pointer;
+  color: #737791;
 }
 .sideber-menu li a {
   text-decoration: none;

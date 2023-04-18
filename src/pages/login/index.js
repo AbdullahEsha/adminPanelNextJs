@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import signIn from "@/firebase/auth/singin";
-import { useRouter } from "next/navigation";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import signIn from '@/firebase/auth/singin';
+import { useRouter } from 'next/navigation';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import firebase_app from "@/firebase/config";
-import Loader from "@/components/Loader";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from 'firebase/auth';
+import firebase_app from '@/firebase/config';
+import Loader from '@/components/Loader';
+import axios from 'axios';
+import { URL } from '@/components/Reuse';
+
+import Cookies from 'js-cookie';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
@@ -17,25 +25,55 @@ const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleTogglePasswordVisibility = () => {
-    setIsPasswordVisible((prevIsPasswordVisible) => !prevIsPasswordVisible);
+    setIsPasswordVisible(
+      (prevIsPasswordVisible) => !prevIsPasswordVisible
+    );
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     // handle login logic here
+
     setLoading(true);
+    try {
+      const response = await axios.post(
+        `${URL}/api/v1/admin/login`,
+        {
+          email: email,
+          password,
+          loginTypes: 'emailPassword',
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-    const { result, error } = await signIn(email, password);
+      Cookies.set('jwt', response.data.token);
+      router.push('/');
 
-    setLoading(false);
+      setEmail('');
+      setPassword('');
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
 
-    if (error) {
-      return console.log(error.message);
+      console.log(err.message);
     }
 
+    // FireBase
+
+    // const { result, error } = await signIn(email, password);
+
+    // setLoading(false);
+
+    // if (error) {
+    //   return console.log(error.message);
+    // }
+
     // else successful
-    console.log(result);
-    return router.push("/");
+    // console.log(result.user.email);
+    // return router.push("/");
   };
 
   return (
@@ -71,7 +109,7 @@ const LoginForm = () => {
             className="absolute icon-input"
           />
           <input
-            type={isPasswordVisible ? "text" : "password"}
+            type={isPasswordVisible ? 'text' : 'password'}
             id="password"
             value={password}
             name="password"
@@ -92,7 +130,7 @@ const LoginForm = () => {
               />
             ) : (
               <Image
-                style={{ opacity: "50%" }}
+                style={{ opacity: '50%' }}
                 src="/image/eyeOpen.png"
                 width={20}
                 height={20}
@@ -136,8 +174,23 @@ const LoginPage = () => {
   const loginWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result);
-      router.push("/");
+      const email = result.user.email;
+
+      const response = await axios.post(`${URL}/api/v1/admin/login`, {
+        email: email,
+        password: '',
+        loginTypes: 'social',
+      });
+      // console.log(response.data);
+
+      Cookies.set('jwt', response.data.token);
+      router.push('/');
+
+      // url=http://localhost:3000/api/v1/admin/login
+
+      //   "email": "irakibul568@gmail.com",
+      // "password": "",
+      // "loginTypes": "social"
     } catch (err) {
       console.log(err);
     }
@@ -177,7 +230,7 @@ const LoginPage = () => {
               />
               <span>Continue with Google</span>
             </button>
-            <button className="btn-auth">
+            {/* <button className="btn-auth">
               <Image
                 src="/image/apple.png"
                 alt="apple-icon"
@@ -185,7 +238,7 @@ const LoginPage = () => {
                 height={38}
               />
               <span>Continue with Apple</span>
-            </button>
+            </button> */}
           </div>
         </div>
 

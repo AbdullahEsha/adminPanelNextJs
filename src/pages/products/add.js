@@ -5,36 +5,20 @@ import React, { useState } from "react";
 import { BiMessageSquareEdit } from "react-icons/bi";
 import { RiFolderUploadFill } from "react-icons/ri";
 import { GrUpdate } from "react-icons/gr";
-
+import { useRouter } from "next/router";
 import ImageUploading from "react-images-uploading";
 import axios from "axios";
 import { async } from "@firebase/util";
 
 const cloudName = "dhssbbiwj";
-const uploadPreset = "nasim67reja";
-const uploadUrl = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
-
+const uploadPreset = "l9nncyzc";
+const uploadUrl = `https://api.cloudinary.com/v1_1/bayshore/image/upload`;
+export { cloudName, uploadPreset, uploadUrl };
 const Products = () => {
   const [images, setImages] = useState([]);
   const maxNumber = 69;
-  const handleImageUpload = async () => {
-    // Upload each image to Cloudinary
-    const imageUrls = await Promise.all(
-      images.map(async (image) => {
-        const formData = new FormData();
-        formData.append("file", image.file);
-        formData.append("upload_preset", uploadPreset);
-        const response = await axios.post(uploadUrl, formData);
-        return response.data.secure_url;
-      })
-    );
-    console.log(imageUrls);
-    // Save the image URLs in a database
-    // await axios.post("/api/images", { urls: imageUrls });
-    console.log("yeah");
-    // Update the state to display the uploaded images
-    setImages([]);
-  };
+  const router = useRouter();
+
   const onChange = async (imageList, addUpdateIndex) => {
     // console.log(imageList, addUpdateIndex);
     // Update the state to display the selected images
@@ -44,8 +28,18 @@ const Products = () => {
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
   const [quantity, setQuantity] = useState();
+
+  const [selectedValue, setSelectedValue] = useState("");
+  const [type, setType] = useState("regular");
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+    if (selectedValue === "Custom Card" && selectedValue === "Custom Dot") {
+      setType("custom");
+    }
+  };
+
   const handleSubmit = async () => {
-    // console.log(name, price, description);
     const imageUrls = await Promise.all(
       images.map(async (image) => {
         const formData = new FormData();
@@ -55,30 +49,29 @@ const Products = () => {
         return response.data.secure_url;
       })
     );
-    // console.log(imageUrls);
-    // Create the new product
+
     const productData = {
       name,
       description,
       price,
       quantity,
-      category: "Home",
-      images: imageUrls,
+      imageUrls,
+      category: selectedValue,
+      type,
     };
+
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/products",
-        productData
+        "https://sowp-new-backend.herokuapp.com/api/v1/product",
+        productData,
+        { withCredentials: true }
       );
       console.log(response);
     } catch (err) {
       console.log(err);
     }
-    setName("");
-    setPrice("");
-    setDescription("");
-    setQuantity("");
-    setImages([]);
+
+    router.push("/products");
   };
   return (
     <div className="container">
@@ -177,7 +170,10 @@ const Products = () => {
                           alt="updating-icon"
                         /> */}
                             <GrUpdate
-                              style={{ width: "10px", height: "10px" }}
+                              style={{
+                                width: "10px",
+                                height: "10px",
+                              }}
                             />
                           </button>
                           <button
@@ -228,16 +224,58 @@ const Products = () => {
             />
           </div>
         </div>
-        <div className="product-unit-price">
-          <h3>Price:</h3>
-          <input
-            type="number"
-            placeholder="Enter product price"
-            className="product-upload-input"
-            onChange={(e) => setPrice(e.target.value)}
-            value={price}
-          />
+
+        <div
+          // style={{ border: "2px solid black" }}
+          className="product-unit-price "
+        >
+          <div>
+            <h3>Price:</h3>
+            <input
+              type="number"
+              placeholder="Enter product price"
+              className="product-upload-input"
+              onChange={(e) => setPrice(e.target.value)}
+              value={price}
+            />
+          </div>
+          <div>
+            <>
+              <style jsx>{`
+                select {
+                  padding: 8px 12px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  font-size: 16px;
+                  outline: none;
+                  margin-top: 2rem;
+                  width: 100%;
+                }
+                // select:focus {
+                //   outline: 2px solid blue;
+                // }
+              `}</style>
+              <select value={selectedValue} onChange={handleChange}>
+                <option value="">Select a product</option>
+                <option value="Custom Card">Custom Card</option>
+                <option value="Custom Dot">Custom Dot</option>
+                <option value="Cards">Cards</option>
+                <option value="Metal Cards">Metal Cards</option>
+                <option value="Swop XL">Swop XL</option>
+                <option value="Swop Band">Swop Band</option>
+              </select>
+            </>
+            {/* <select value={selectedValue} onChange={handleChange}>
+              <option value="">Select a product</option>
+              <option value="Custom product">Custom product</option>
+              <option value="Cards">Cards</option>
+              <option value="Metal Cards">Metal Cards</option>
+              <option value="Swop XL">Swop XL</option>
+              <option value="Swop Band">Swop Band</option>
+            </select> */}
+          </div>
         </div>
+
         <div className="product-quantity">
           <h3>Quantity available:</h3>
           <input

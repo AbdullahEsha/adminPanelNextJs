@@ -22,7 +22,7 @@ const Referral = () => {
               width={177}
             />
             <p>Travis Herron</p>
-            <a href="www.swopme.com/Travis">www.swopme.com/Travis</a>
+            <a href="www.swopme.co/Travis">www.swopme.com/Travis</a>
           </div>
         </div>
         <div className="user-bottom">

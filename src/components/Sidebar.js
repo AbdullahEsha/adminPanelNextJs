@@ -12,20 +12,24 @@ import { IoPeopleOutline, IoTicketOutline } from "react-icons/io5";
 import { VscSignOut, VscReferences } from "react-icons/vsc";
 import { useRouter } from "next/router";
 import SignOut from "@/firebase/auth/signout";
+import Cookies from "js-cookie";
 
 const Sidebar = () => {
   const router = useRouter();
   const { width } = useWindowDimensions();
 
-  const handleSignOut = async () => {
-    try {
-      await SignOut();
-      router.push("/login");
-    } catch (error) {
-      router.push("/");
+  const handleSignOut = () => {
+    Cookies.remove("jwt");
+    router.push("/login");
 
-      console.log(error.message);
-    }
+    // try {
+    //   await SignOut();
+    //   router.push("/login");
+    // } catch (error) {
+    //   router.push("/");
+
+    //   console.log(error.message);
+    // }
   };
 
   return (
@@ -55,7 +59,7 @@ const Sidebar = () => {
         <li className={`${router.pathname === "/" && "active-menu"}`}>
           <Link href="/">
             <FaChartPie size={20} />
-            <label> Dashboard</label>
+            Dashboard
           </Link>
         </li>
         <li
@@ -67,7 +71,7 @@ const Sidebar = () => {
         >
           <Link href="/users">
             <FiBarChart2 size={20} />
-            <label> Users</label>
+            Users
           </Link>
         </li>
         <li
@@ -79,7 +83,7 @@ const Sidebar = () => {
         >
           <Link href="/orders">
             <AiOutlineShoppingCart size={20} />
-            <label> Orders</label>
+            Orders
           </Link>
         </li>
         <li
@@ -94,40 +98,25 @@ const Sidebar = () => {
         >
           <Link href="/products">
             <HiOutlineShoppingBag size={20} />
-            <label> Products</label>
+            Products
           </Link>
         </li>
         <li
-          // className={`${
-          //   (router.pathname === "/coupons" ||
-          //     router.pathname === "/coupons/[coupon]") &&
-          //   "active-menu"
-          // }`}
           className={`${
             router.pathname.startsWith("/coupons") && "active-menu"
           }`}
         >
           <Link href="/coupons">
-            <IoTicketOutline size={20} /> <label>Coupons</label>
+            <IoTicketOutline size={20} /> Coupons
           </Link>
         </li>
-        <li
-          className={`${
-            (router.pathname === "/category" ||
-              router.pathname === "/category/[coupon]") &&
-            "active-menu"
-          }`}
-        >
-          <Link href="/category">
-            <IoTicketOutline size={20} /> <label>Catogory</label>
-          </Link>
-        </li>
+
         <li
           className={`${router.pathname === "/block-chain" && "active-menu"}`}
         >
           <Link href="#">
             <BsBoundingBox size={20} />
-            <label> BlockChain</label>
+            BlockChain
           </Link>
         </li>
         <li
@@ -138,19 +127,19 @@ const Sidebar = () => {
           }`}
         >
           <Link href="/referrals">
-            <VscReferences size={20} /> <label>Referrals</label>
+            <VscReferences size={20} /> Referrals
           </Link>
         </li>
         <li className={`${router.pathname === "/supports" && "active-menu"}`}>
           <Link href="/supports">
             <BiSupport size={20} />
-            <label> Supports</label>
+            Supports
           </Link>
         </li>
         <li className={`${router.pathname === "/financials" && "active-menu"}`}>
           <Link href="/financials">
             <BsCoin size={20} />
-            <label> Financials</label>
+            Financials
           </Link>
         </li>
         <li
@@ -160,7 +149,7 @@ const Sidebar = () => {
         >
           <Link href="/enterprise-leads">
             <MdOutlineLeaderboard size={20} />
-            <label> Enterprises Leads</label>
+            Enterprises Leads
           </Link>
         </li>
         <li
@@ -168,14 +157,12 @@ const Sidebar = () => {
         >
           <Link href="/subscribers">
             <IoPeopleOutline size={20} />
-            <label> Subscribers</label>
+            Subscribers
           </Link>
         </li>
-        <li>
-          <Link href="/signout" onClick={handleSignOut}>
-            <VscSignOut size={20} />
-            <label> Sign Out</label>
-          </Link>
+        <li onClick={handleSignOut} style={{ display: "flex", gap: "10px" }}>
+          <VscSignOut size={20} />
+          <label style={{ cursor: "pointer" }}> Sign Out</label>
         </li>
       </ul>
     </div>
